@@ -1,6 +1,6 @@
 
 
-# CALCULATOR :calculator:
+# CALCULATOR
 
 ### Request
 
