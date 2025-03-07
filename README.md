@@ -25,8 +25,31 @@ A responsive calculator app built with **Next.js**, **React**, and **Tailwind CS
 
 ### Prerequisites
 
+- node.js (14+ recommended)
+- npm
+
 ### Installation
 
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/calculator.git
+   cd calculator
+   ```
+
+2. Install dependencies:
+
+    ``` bash
+    npm install
+    ```
+
+3. Run the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+4. Open <http://localhost:3000>
 
 ## Steps followed to achieve above
 
@@ -90,3 +113,4 @@ A responsive calculator app built with **Next.js**, **React**, and **Tailwind CS
 	-  if I click the C button, it resets the operation and shows the default value (0)
 	- if I click the DEL button, it removes the last character
 
+- Implement calculator and test until all tests pass

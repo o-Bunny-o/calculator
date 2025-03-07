@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@o-Bunny-o/*": ["./src/*"]
+      "@o-Bunny-o/*": ["./app/*"]
     }
   }
 }
