@@ -1,5 +1,6 @@
 "use client"; // tells next.js this file must run on the client side
 
+import React from 'react';
 import { useState } from 'react';
 import '../styles/output.css'; // imports tailwind output styles (base, components, utilities)
 
@@ -37,12 +38,12 @@ const Calculator = () => {
   return (
     <div 
       // container with a black bg, rounded corners, a shadow, and a hover scale effect
-      className="max-w-lg mx-auto p-6 bg-black rounded-xl shadow-2xl mt-0"
+      className="max-w-lg mx-auto p-4 bg-black rounded-xl shadow-2xl mt-0"
     >
       {/* display area with neon green text and a test id for unit tests */}
       <div 
         data-testid="display"
-        className="bg-gray-900 border border-neon-green rounded p-6 mb-6 text-right text-4xl font-bold text-neon-green"
+        className="bg-gray-900 border border-neon-green rounded p-4 mb-4 text-right text-4xl font-bold text-neon-green"
       >
         {input || "0"}
       </div>
