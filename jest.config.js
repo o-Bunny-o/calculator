@@ -1,10 +1,11 @@
 module.exports = {
-  testEnvironment: "jest-environment-jsdom", //  jsdom for browser-like testing
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // setup file for custom jest matchers
+  testEnvironment: "jest-environment-jsdom",
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   transform: {
-    "^.+\\.(js|jsx)$": ["babel-jest", { configFile: "./babel.config.test.js" }],
+    "^.+\\.(js|jsx)$": ["babel-jest", { configFile: "./babel.config.jest.js" }],
   },
   moduleNameMapper: {
-    "\\.css$": "identity-obj-proxy", // mock css file imports
+    "\\.css$": "identity-obj-proxy",
   },
 };
+
