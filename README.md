@@ -179,5 +179,5 @@ Check out the live demo here: [https://neoncalculator.vercel.app/](https://neonc
 6. [Babel Font Loader Conflict (Next.js)](https://nextjs.org/docs/messages/babel-font-loader-conflict)
 7. [Static Exports (Next.js)](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports)
 8. [Setting Up Your Database (Next.js Official Tutorial)](https://nextjs.org/learn/dashboard-app/setting-up-your-database)
-9. [Test Error ChatGPT](ChatGPT/testErrorChatGPT)
+9. [Test Error ChatGPT](ChatGPT/testErrorChatGPT.md)
 
