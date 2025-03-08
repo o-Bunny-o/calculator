@@ -21,6 +21,8 @@ A responsive calculator app built with **Next.js**, **React**, and **Tailwind CS
 
 ## Demo
 
+Check out the live demo here: [https://neoncalculator.vercel.app/](https://neoncalculator.vercel.app/)
+
 ## Start the calculator
 
 ### Prerequisites
@@ -94,12 +96,47 @@ A responsive calculator app built with **Next.js**, **React**, and **Tailwind CS
 	npx tailwindcss init -p
     ```
 
+- Configure Tailwind
+    - Update styles/global.css to include:
+
+        ``` bash
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        ```
+
+    - Update tailwind.config.js to scan your app and components folders and add custom neon colors:
+        ``` bash
+        module.exports = {
+          content: [
+        "./app/**/*.{js,jsx,ts,tsx}",
+        "./components/**/*.{js,jsx,ts,tsx}",
+      ],
+          theme: {
+        extend: {
+      colors: {
+        "neon-green": "#39FF14",
+        "neon-blue": "#1F51FF",
+        "neon-pink": "#ff00de",
+        "neon-purple": "#BF00FF",
+        "neon-yellow": "#F4FF00",
+        "neon-orange": "#FFA500",
+        "neon-red": "#FF073A",
+        "neon-cyan": "#00fefc",
+             },    
+         },
+        },
+        plugins: [],
+        };
+
+        ```
+
 - Plan out project structure:
 	
 	I need:
     - __Components__ folder for the calculator
 	- __Tests__ folder for the unit tests (recommended to be done before start coding the app, to ensure functionality)
-	- __Pages__ folder for the "box" where the js will work in. usually containing an app and and index file
+	- __App__ folder for the "box" where the js will work in. usually containing an app and and index file
 	- __Styles__ folder for the css file
 
 - Unit tests setup
@@ -114,3 +151,33 @@ A responsive calculator app built with **Next.js**, **React**, and **Tailwind CS
 	- if I click the DEL button, it removes the last character
 
 - Implement calculator and test until all tests pass
+- Additional Configuration for Fonts and Deployment:
+    - Added the Orbitron font via next/font in the layout for a consistent neon look.
+    - Configured deployment settings to allow static export or use Vercel for dynamic features.
+
+## Struggles
+
+- Babel vs. swc configuration:
+
+    Managing separate configurations for tests (using babel) and production (using swc) was challenging, especially to support next/font without interfering with jest tests.
+
+- Static export issues:
+
+    Configuring basePath and assetPrefix for GitHub Pages led to missing styles, so deploying on Vercel became the preferred method.
+
+- Hydration errors and compatibility issues:
+
+    Ensuring consistent rendering between server and client, particularly with fonts and dynamic imports, required multiple iterations and troubleshooting.
+
+## Sources
+
+1. [Create a Calculator App Using Next.js (GeeksforGeeks)](https://www.geeksforgeeks.org/create-a-calculator-app-using-next-js/)
+2. [JS Arithmetic (W3Schools)](https://www.w3schools.com/js/js_arithmetic.asp)
+3. [JS Comparisons (W3Schools)](https://www.w3schools.com/js/js_comparisons.asp)
+4. [Adobe Color](https://color.adobe.com/)
+5. [React Hydration Error Message (Next.js)](https://nextjs.org/docs/messages/react-hydration-error)
+6. [Babel Font Loader Conflict (Next.js)](https://nextjs.org/docs/messages/babel-font-loader-conflict)
+7. [Static Exports (Next.js)](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports)
+8. [Setting Up Your Database (Next.js Official Tutorial)](https://nextjs.org/learn/dashboard-app/setting-up-your-database)
+9. [Test Error ChatGPT](ChatGPT/testErrorChatGPT)
+
