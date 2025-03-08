@@ -5,7 +5,7 @@ import Calculator from "../components/Calculator";
 export default function Home() {
   return (
     // main serves as the container for the primary content
-    <main className="flex items-center justify-center">
+    <main className="w-full flex items-center justify-center">
       <Calculator />
     </main>
   );

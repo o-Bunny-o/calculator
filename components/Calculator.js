@@ -38,7 +38,7 @@ const Calculator = () => {
   return (
     <div 
       // container with a black bg, rounded corners, a shadow, and a hover scale effect
-      className="max-w-lg mx-auto p-4 bg-black rounded-xl shadow-2xl mt-0"
+      className=" p-6 bg-black rounded-xl"
     >
       {/* display area with neon green text and a test id for unit tests */}
       <div 
@@ -51,14 +51,14 @@ const Calculator = () => {
       <div className="grid grid-cols-4 gap-4">
         {/* clear button spans two columns */}
         <button 
-          className="col-span-2 bg-neon-pink hover:bg-neon-yellow text-black py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
+          className="min-w-40 col-span-2 bg-neon-pink hover:bg-neon-yellow text-black py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
           onClick={clearInput}
         >
           C
         </button>
         {/* delete button */}
         <button 
-          className="bg-neon-blue hover:bg-neon-yellow hover:text-neon-pink hover:text-xl hover:font-bold  text-white py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
+          className="min-w-10 bg-neon-cyan hover:bg-neon-yellow hover:text-neon-pink hover:text-xl hover:font-bold  text-neon-pink py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
           onClick={deleteLast}
         >
           DEL
@@ -71,7 +71,7 @@ const Calculator = () => {
           ÷
         </button>
         {/* mapping through digit and operator buttons */}
-        {["7", "8", "9", "*", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "="].map((btn, index) => {
+        {["7", "8", "9", "*", "4", "5", "6", "-", "1", "2", "3", "+", ".", "0", "="].map((btn, index) => {
           // if the button is equals, handle it differently
           if (btn === "=") {
             return (
@@ -81,6 +81,49 @@ const Calculator = () => {
                 onClick={calculateResult}
               >
                 {btn}
+              </button>
+            );
+          }
+          if (btn === "*") {
+            return (
+              <button
+                key={index}
+                className="bg-neon-green hover:bg-neon-yellow text-black py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
+                onClick={() => handleClick('*')}
+              >
+                x
+              </button>
+            );
+          }
+          if (btn === "-") {
+            return (
+              <button
+                key={index}
+                className="bg-neon-green hover:bg-neon-yellow text-black py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"                onClick={() => handleClick('-')}
+              >
+                -
+              </button>
+            );
+          }
+          if (btn === "+") {
+            return (
+              <button
+                key={index}
+                className="bg-neon-green hover:bg-neon-yellow text-black py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
+                onClick={() => handleClick('+')}
+              >
+                +
+              </button>
+            );
+          }
+          if (btn === ".") {
+            return (
+              <button
+                key={index}
+                className="bg-neon-green hover:bg-neon-yellow text-black py-4 rounded-lg text-xl font-bold transform transition duration-500 hover:scale-105"
+                onClick={() => handleClick('.')}
+              >
+                .
               </button>
             );
           }

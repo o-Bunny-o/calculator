@@ -2,6 +2,13 @@ import React from 'react';
 import "../styles/global.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Orbitron } from "next/font/google";
+
+// add font to app
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata = {
   title: "Neon Calculator",
@@ -11,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white min-h-screen flex flex-col">
+      <body className={`${orbitron.className} bg-black text-white min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-grow flex items-center justify-center">
           {children}

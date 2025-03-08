@@ -1,6 +1,10 @@
-module.exports = {
+if (process.env.NODE_ENV === 'test') {
+  module.exports = {
     presets: [
       "@babel/preset-env",    // transforms modern js
       "@babel/preset-react",  // transforms jsx
     ],
   };
+} else {
+  module.exports ={};
+}
